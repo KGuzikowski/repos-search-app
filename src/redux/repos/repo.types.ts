@@ -39,7 +39,7 @@ export interface repoType {
 }
 
 export interface reposStateType {
-    repos: null | repoType,
+    repos: null | repoType[],
     isFetching: boolean,
     errorMessage: string
 }

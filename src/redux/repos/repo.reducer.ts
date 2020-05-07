@@ -11,10 +11,11 @@ const reposReducer = (state = INITIAL_STATE, action: any): reposStateType => {
         case reposActionTypes.FETCH_REPOS_START:
             return {
                 ...state,
-                isFetching: action.payload
+                isFetching: action.payload,
+                errorMessage: ''
             }
         case reposActionTypes.FETCH_REPOS_SUCCESS:
-            console.log('aha', action.payload)
+            // console.log('aha', action.payload)
             if(action.payload.errors) throw Error
             const repos = action.payload.items.map((item: any) => ({
                 id: item.id,
@@ -24,7 +25,7 @@ const reposReducer = (state = INITIAL_STATE, action: any): reposStateType => {
                     name: item.owner.login
                 },
                 stars: item.stargazers_count,
-                createdAt: item.created_at
+                createdAt: item.created_at.substr(0, 10)
             }))
             console.log(repos)
             return {

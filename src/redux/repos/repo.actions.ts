@@ -29,7 +29,7 @@ export const fetchReposStartAsync = (name: string): ThunkAction<void, reposState
             dispatch(fetchReposSuccess(data))
             console.log('Dispatching fetchReposSuccess')
         } catch(error) {
-            dispatch(fetchReposFailure('Sorry! Cannot fetch data!'))
+            dispatch(fetchReposFailure('Sorry, cannot fetch data! Please try again.'))
             console.log('Dispatching fetchReposFailure')
         }
     }
