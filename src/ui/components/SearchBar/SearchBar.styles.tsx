@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import { secondaryColor } from '../../style-variables'
+import { ReactComponent as Icon } from './search.svg'
 
 export const Input = styled.input`
-    padding 10px 20px;
+    padding 15px 20px 15px 60px;
     outline: none;
+    box-sizing: border-box;
     font-size: 16px;
     border-color: #ccc;
-    width: 500px;
+    width: 100%;
     border: 1px solid #ccc;
+    border-radius: 6px;
 
     &:focus {
         border-color: ${secondaryColor};
@@ -15,6 +18,12 @@ export const Input = styled.input`
 `
 
 export const Form = styled.form`
-    display: flex;
-    // justify-content: space-around;
+    margin-top: 30px;
+    width: 600px;
+`
+
+export const SearchIcon = styled(Icon)`
+    position: absolute;
+    padding-top: 9px;
+    padding-left: 12px;
 `
