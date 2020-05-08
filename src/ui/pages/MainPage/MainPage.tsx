@@ -8,14 +8,19 @@ import About from '../../components/About/About'
 import TableSection from '../../components/TableSection/TableSection'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import Spinner from '../../components/Spinner/Spinner'
-// import '../../components/Spinner/spinner.svg'
-type MainPageProps = {
 
-}
-
-const MainPage = (props: MainPageProps) => {
+const MainPage = () => {
     const repos = useSelector((state: RootState) => state.repos)
-    console.log(repos)
+    let start = 0, end = 0, data
+    let length = repos.repos === null ? 0 : repos.repos.length
+    if(repos.repos !== null && repos.repos.length !== 0) {
+        const pagination = repos.pagination
+        const page = repos.page
+        start = (page - 1) * pagination
+        end = start + pagination
+        data = repos.repos.slice(start, end)
+    } else data = repos.repos
+    
     return (
         <>
             <Header />
@@ -28,7 +33,7 @@ const MainPage = (props: MainPageProps) => {
                     ? <ErrorMessage>{repos.errorMessage}</ErrorMessage>
                     : repos.isFetching
                         ? <Spinner />
-                        : <TableSection user={null} repos={repos.repos}/>
+                        : <TableSection user={null} repos={data} reposNum={length} start={start} end={end}/>
                 }
             </Container>
         </>

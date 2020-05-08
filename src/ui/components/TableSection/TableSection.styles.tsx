@@ -7,8 +7,7 @@ const css = `
     text-align: left;
 `
 
-export const Text = styled.div`
-    margin: 40px 0 20px 0;
+export const Text = styled.p`
     font-size: 20px;
 `
 export const TableSectionContainer = styled.div`
@@ -22,6 +21,14 @@ export const Table = styled.table`
     margin-top: 10px;
     width: 100%;
     border-collapse: collapse;
+`
+
+export const TableHeader = styled.div`
+    width: 100%;
+    margin: 40px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    aling-items: center;
 `
 
 export const Th = styled.th`

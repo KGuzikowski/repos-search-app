@@ -1,29 +1,44 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { repoType } from '../../../redux/repos/repo.types'
-import { Text, Table, TableSectionContainer, Th, ThDiv } from './TableSection.styles'
+import { sortReposAsc, sortReposDesc } from '../../../redux/repos/repo.actions'
+import { Text, Table, TableSectionContainer, Th, ThDiv, TableHeader } from './TableSection.styles'
 import Row from './Row'
-import ArrowDown from './ArrowDown'
+import { ArrowDown, ArrowUp, ArrowsDiv } from './Arrows'
+import PaginationChanger from '../Pagination/PaginationChanger'
+import PageChanger from '../Pagination/PageChanger'
 
 type TableProps = {
     user: number | null,
-    repos: repoType[] | null
+    repos: repoType[] | null,
+    reposNum: number,
+    start: number,
+    end: number
 }
 
-const TableSection = ({ user, repos }: TableProps) => {
+const TableSection = ({ user, repos, reposNum, start, end }: TableProps) => {
+    const dispatch = useDispatch()
     if(repos === null || repos.length === 0)
         return <Text> There are no repositories selected, use search bar above to find some. </Text>
 
-    const handleArrowClick = (e: any) => {
+    const handleArrowDownClick = (i: number) => {
+        dispatch(sortReposAsc(i))
+    }
 
+    const handleArrowUpClick = (i: number) => {
+        dispatch(sortReposDesc(i))
     }
 
     const theadContent = ['ID', 'Repo Title', 'Owner', 'Stars', 'Created at']
 
     return (
         <TableSectionContainer>
-            <Text>
-                Here are repositories you requested:
-            </Text>
+            <TableHeader>
+                <Text>
+                    Here are repositories you requested:
+                </Text>
+                <PaginationChanger />
+            </TableHeader>
             <Table>
                 <thead>
                     <tr>
@@ -32,7 +47,10 @@ const TableSection = ({ user, repos }: TableProps) => {
                                 <Th key={i}>
                                     <ThDiv>
                                         <p>{col}</p>
-                                        <ArrowDown key={i} onClick={(e) => handleArrowClick(e)}/>
+                                        <ArrowsDiv>
+                                            <ArrowUp onClick={() => handleArrowUpClick(i)}/>
+                                            <ArrowDown onClick={() => handleArrowDownClick(i)}/>
+                                        </ArrowsDiv>
                                     </ThDiv>
                                 </Th>   
                             ))
@@ -43,6 +61,7 @@ const TableSection = ({ user, repos }: TableProps) => {
                     {repos.map(repo => <Row key={repo.id} repo={repo} />)}
                 </tbody>
             </Table>
+            <PageChanger reposNum={reposNum} start={start} end={end} />
         </TableSectionContainer>
     )
 }
