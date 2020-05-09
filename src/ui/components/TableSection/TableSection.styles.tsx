@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { primaryColor } from '../../style-variables'
+import { primaryColor, secondaryColor, secondaryDarkerColor } from '../../style-variables'
 
 const css = `
     padding: 10px;
@@ -9,6 +9,10 @@ const css = `
 
 export const Text = styled.p`
     font-size: 20px;
+
+    @media only screen and (max-width: 700px) {
+        font-size: 16px;
+    }
 `
 export const TableSectionContainer = styled.div`
     width: 100%;
@@ -23,20 +27,33 @@ export const Table = styled.table`
     border-collapse: collapse;
 `
 
+export const TableContainer = styled.div`
+    width: 100%;
+    overflow: auto;
+`
+
 export const TableHeader = styled.div`
     width: 100%;
     margin: 40px 0 20px 0;
     display: flex;
     justify-content: space-between;
     aling-items: center;
+
+    @media only screen and (max-width: 700px) {
+        flex-direction: column;
+        aling-items: flex-start;
+        margin: 20px 0 10px 0;
+    }
 `
 
 export const Th = styled.th`
     border: 3px solid ${primaryColor};
+    background: ${secondaryColor};
     ${css}
 `
-export const Td = styled.td`
+export const Td = styled.td<{highlighted: boolean}>`
     border: 1px solid ${primaryColor};
+    ${props => props.highlighted ? `color: ${secondaryDarkerColor};` : ''}
     ${css}
 `
 

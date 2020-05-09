@@ -2,14 +2,15 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { repoType } from '../../../redux/repos/repo.types'
 import { sortReposAsc, sortReposDesc } from '../../../redux/repos/repo.actions'
-import { Text, Table, TableSectionContainer, Th, ThDiv, TableHeader } from './TableSection.styles'
+import { Text, Table, TableSectionContainer, Th, ThDiv, TableHeader, TableContainer } from './TableSection.styles'
 import Row from './Row'
 import { ArrowDown, ArrowUp, ArrowsDiv } from './Arrows'
 import PaginationChanger from '../Pagination/PaginationChanger'
 import PageChanger from '../Pagination/PageChanger'
+import { userType } from '../../../redux/user/user.types'
 
 type TableProps = {
-    user: number | null,
+    user: userType | null,
     repos: repoType[] | null,
     reposNum: number,
     start: number,
@@ -39,28 +40,30 @@ const TableSection = ({ user, repos, reposNum, start, end }: TableProps) => {
                 </Text>
                 <PaginationChanger />
             </TableHeader>
-            <Table>
-                <thead>
-                    <tr>
-                        {
-                            theadContent.map((col, i) => (
-                                <Th key={i}>
-                                    <ThDiv>
-                                        <p>{col}</p>
-                                        <ArrowsDiv>
-                                            <ArrowUp onClick={() => handleArrowUpClick(i)}/>
-                                            <ArrowDown onClick={() => handleArrowDownClick(i)}/>
-                                        </ArrowsDiv>
-                                    </ThDiv>
-                                </Th>   
-                            ))
-                        }
-                    </tr>
-                </thead>
-                <tbody>
-                    {repos.map(repo => <Row key={repo.id} repo={repo} />)}
-                </tbody>
-            </Table>
+            <TableContainer>
+                <Table>
+                    <thead>
+                        <tr>
+                            {
+                                theadContent.map((col, i) => (
+                                    <Th key={i}>
+                                        <ThDiv>
+                                            <p>{col}</p>
+                                            <ArrowsDiv>
+                                                <ArrowUp onClick={() => handleArrowUpClick(i)}/>
+                                                <ArrowDown onClick={() => handleArrowDownClick(i)}/>
+                                            </ArrowsDiv>
+                                        </ThDiv>
+                                    </Th>   
+                                ))
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {repos.map(repo => <Row key={repo.id} repo={repo} highlighted={user !== null && user.id === repo.owner.id}/>)}
+                    </tbody>
+                </Table>
+            </TableContainer>
             <PageChanger reposNum={reposNum} start={start} end={end} />
         </TableSectionContainer>
     )

@@ -18,12 +18,21 @@ export const Input = styled.input`
 `
 
 export const Form = styled.form`
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 50px;
     width: 600px;
+    
+    @media only screen and (max-width: 700px) {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
 `
 
 export const SearchIcon = styled(Icon)`
     position: absolute;
     padding-top: 9px;
     padding-left: 12px;
+    height: 35px;
+    width: 35px;
 `

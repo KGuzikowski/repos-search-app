@@ -1,19 +1,18 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-// @ts-ignore
-// import { sessionReducer } from 'redux-react-session';
 import reposReducer from './repos/repo.reducer'
+import userReducer from './user/user.reducer'
 
 const reducers = {
-    // session: sessionReducer
-    repos: reposReducer
+    repos: reposReducer,
+    user: userReducer
 }
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['repos']
+    whitelist: ['repos', 'user']
 }
 
 const rootReducer = combineReducers(reducers)

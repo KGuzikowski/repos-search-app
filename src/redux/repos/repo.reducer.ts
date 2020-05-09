@@ -21,6 +21,7 @@ const reposReducer = (state = INITIAL_STATE, action: any): reposStateType => {
             return {
                 ...state,
                 isFetching: false,
+                errorMessage: '',
                 repos: action.payload
             }
         case reposActionTypes.FETCH_REPOS_FAILURE:

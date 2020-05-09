@@ -8,15 +8,35 @@ const css = `
     width: 30px;
     height: 30px;
     transition: fill 100ms ease-in;
-
-    &:hover {
-        fill: ${secondaryColor};
-    }
 `
 
 export const ArrowDown = styled(ArrowIcon)`
     margin-top: -5px;
     ${css}
+
+    &:hover {
+        fill: #fff;
+    }
+
+    @media only screen and (max-width: 700px) {
+        width: 30px;
+        height: 30px;
+    }
+`
+
+export const ArrowUp = styled(ArrowIcon)`
+    transform: rotate(180deg);
+    margin-bottom: -5px;
+    ${css}
+
+    &:hover {
+        fill: #fff;
+    }
+
+    @media only screen and (max-width: 700px) {
+        width: 30px;
+        height: 30px;
+    }
 `
 
 export const ArrowRight = styled(ArrowIcon)`
@@ -24,6 +44,10 @@ export const ArrowRight = styled(ArrowIcon)`
     width: 40px;
     height: 40px;
     transform: rotate(-90deg);
+
+    &:hover {
+        fill: ${secondaryColor};
+    }
 `
 
 export const ArrowLeft = styled(ArrowIcon)`
@@ -31,12 +55,10 @@ export const ArrowLeft = styled(ArrowIcon)`
     width: 40px;
     height: 40px;
     transform: rotate(90deg);
-`
 
-export const ArrowUp = styled(ArrowIcon)`
-    transform: rotate(180deg);
-    margin-bottom: -5px;
-    ${css}
+    &:hover {
+        fill: ${secondaryColor};
+    }
 `
 
 export const ArrowsDiv = styled.div`

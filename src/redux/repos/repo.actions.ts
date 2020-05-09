@@ -1,6 +1,7 @@
 import { reposActionTypes, FetchResultType, fetchReposFailureType, fetchReposSuccessType, fetchReposStartType, reposStateType, sortReposType, sortBy, setPaginationType, setPageType } from './repo.types'
 import { ThunkAction } from 'redux-thunk'
 import { Action } from 'redux'
+import { fetchRepos } from './utils'
 
 export type AppThunk<State, ReturnType = void> = ThunkAction<ReturnType, State, unknown, Action<string>>
 
@@ -8,7 +9,7 @@ const fetchReposStart = (): fetchReposStartType => ({
     type: reposActionTypes.FETCH_REPOS_START
 })
 
-const fetchReposSuccess = (repos: FetchResultType): fetchReposSuccessType => ({
+export const fetchReposSuccess = (repos: FetchResultType): fetchReposSuccessType => ({
     type: reposActionTypes.FETCH_REPOS_SUCCESS,
     payload: repos
 })
@@ -19,23 +20,19 @@ const fetchReposFailure = (errorMessage: string): fetchReposFailureType => ({
 })
 
 export const fetchReposStartAsync = (name: string): ThunkAction<void, reposStateType, unknown, Action<string>> => {
-    return async dispatch => {
+    return dispatch => {
         try {
+            if(!name) throw Error
+
             dispatch(fetchReposStart())
-            const response = await fetch(`https://api.github.com/search/repositories?q=${name}+in:name&per_page=100`)
-            const data = await response.json()
-            if(data.errors) throw Error
-            const repos = data.items.map((item: any) => ({
-                id: item.id,
-                name: item.name,
-                owner: {
-                    id: item.owner.id,
-                    name: item.owner.login
-                },
-                stars: item.stargazers_count,
-                createdAt: item.created_at.substr(0, 10)
-            }))
-            dispatch(fetchReposSuccess(repos))
+
+            if(typeof Storage !== 'undefined') {
+                const data = localStorage.getItem(name)
+                if(data !== null) {
+                    dispatch(fetchReposSuccess(JSON.parse(data)))
+                } else fetchRepos(dispatch, name)
+            } else fetchRepos(dispatch, name)
+
         } catch(error) {
             dispatch(fetchReposFailure('Sorry, cannot fetch data! Please try again.'))
         }

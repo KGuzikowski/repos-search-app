@@ -3,16 +3,17 @@ import { repoType } from '../../../redux/repos/repo.types'
 import { Td } from './TableSection.styles'
 
 type RowProps = {
-    repo: repoType
+    repo: repoType,
+    highlighted: boolean
 }
 
-const Row = ({ repo }: RowProps) => (
+const Row = ({ repo, highlighted }: RowProps) => (
     <tr>
-        <Td>{repo.id}</Td>
-        <Td>{repo.name}</Td>
-        <Td>{repo.owner.name}</Td>
-        <Td>{repo.stars}</Td>
-        <Td>{repo.createdAt}</Td>
+        <Td highlighted={highlighted}>{repo.id}</Td>
+        <Td highlighted={highlighted}>{repo.name}</Td>
+        <Td highlighted={highlighted}>{repo.owner.name}</Td>
+        <Td highlighted={highlighted}>{repo.stars}</Td>
+        <Td highlighted={highlighted}>{repo.createdAt}</Td>
     </tr>
 )
 
