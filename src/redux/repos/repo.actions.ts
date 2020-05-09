@@ -1,20 +1,20 @@
-import { reposActionTypes, FetchResultType, fetchReposFailureType, fetchReposSuccessType, fetchReposStartType, reposStateType, sortReposType, sortBy, setPaginationType, setPageType } from './repo.types'
+import { repoType, reposActionTypes, fetchReposFailureType, fetchReposSuccessType, fetchReposStartType, reposStateType, sortReposType, sortBy, setPaginationType, setPageType } from './repo.types'
 import { ThunkAction } from 'redux-thunk'
 import { Action } from 'redux'
 import { fetchRepos } from './utils'
 
 export type AppThunk<State, ReturnType = void> = ThunkAction<ReturnType, State, unknown, Action<string>>
 
-const fetchReposStart = (): fetchReposStartType => ({
+export const fetchReposStart = (): fetchReposStartType => ({
     type: reposActionTypes.FETCH_REPOS_START
 })
 
-export const fetchReposSuccess = (repos: FetchResultType): fetchReposSuccessType => ({
+export const fetchReposSuccess = (repos: repoType[], name: string): fetchReposSuccessType => ({
     type: reposActionTypes.FETCH_REPOS_SUCCESS,
-    payload: repos
+    payload: { repos, name }
 })
 
-const fetchReposFailure = (errorMessage: string): fetchReposFailureType => ({
+export const fetchReposFailure = (errorMessage: string): fetchReposFailureType => ({
     type: reposActionTypes.FETCH_REPOS_FAILURE,
     payload: errorMessage
 })
@@ -29,7 +29,7 @@ export const fetchReposStartAsync = (name: string): ThunkAction<void, reposState
             if(typeof Storage !== 'undefined') {
                 const data = localStorage.getItem(name)
                 if(data !== null) {
-                    dispatch(fetchReposSuccess(JSON.parse(data)))
+                    dispatch(fetchReposSuccess(JSON.parse(data), name))
                 } else fetchRepos(dispatch, name)
             } else fetchRepos(dispatch, name)
 

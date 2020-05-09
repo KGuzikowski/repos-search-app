@@ -21,19 +21,16 @@ export enum sortType {
     Desc
 }
 
-export interface FetchResultType {
-    total_count: number,
-    incomplete_results: boolean,
-    items: Array<Object>
-}
-
 export interface fetchReposStartType {
     type: typeof reposActionTypes.FETCH_REPOS_START
 }
 
 export interface fetchReposSuccessType {
     type: typeof reposActionTypes.FETCH_REPOS_SUCCESS,
-    payload: FetchResultType
+    payload: { 
+        repos: repoType[],
+        name: string
+    }
 }
 
 export interface fetchReposFailureType {
@@ -58,6 +55,7 @@ export interface reposStateType {
     repos: null | repoType[],
     isFetching: boolean,
     errorMessage: string,
+    name: string,
     pagination: number,
     page: number
 }
@@ -76,5 +74,3 @@ export interface setPageType {
     type: typeof reposActionTypes.SET_PAGE,
     payload: number
 }
-
-// export type reposActionTypesAll =  fetchReposSuccessType | fetchReposFailureType | fetchReposStartType

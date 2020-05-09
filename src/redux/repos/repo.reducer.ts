@@ -5,6 +5,7 @@ export const INITIAL_STATE: reposStateType = {
     repos: null,
     isFetching: false,
     errorMessage: '',
+    name: '',
     pagination: 5,
     page: 1,
 }
@@ -22,13 +23,16 @@ const reposReducer = (state = INITIAL_STATE, action: any): reposStateType => {
                 ...state,
                 isFetching: false,
                 errorMessage: '',
-                repos: action.payload
+                page: 1,
+                repos: action.payload.repos,
+                name: action.payload.name,
             }
         case reposActionTypes.FETCH_REPOS_FAILURE:
             return {
                 ...state,
                 isFetching: false,
-                errorMessage: action.payload
+                errorMessage: action.payload,
+                page: 1,
             }
 
         case reposActionTypes.SORT_REPOS_ASC:

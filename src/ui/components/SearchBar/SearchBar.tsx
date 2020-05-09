@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../../redux/rootReducer'
 import { Input, Form, SearchIcon } from './SearchBar.styles'
 import { secondaryColor } from '../../style-variables'
 import { fetchReposStartAsync } from '../../../redux/repos/repo.actions'
 import useDebounce from '../../../utils/useDebounce'
 
 const SearchBar = () => {
+    const name = useSelector((state: RootState) => state.repos.name)
     const [iconFill, setIconFill] = useState('#ccc')
-    const [repoName, setRepoName] = useState('')
+    const [repoName, setRepoName] = useState(name)
     const dispatch = useDispatch()
     const debouncedRepoName = useDebounce(repoName, 500)
     
