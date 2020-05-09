@@ -39,6 +39,10 @@ const PageChanger = ({ reposNum, start, end }: PageChangerType) => {
         nextPages.push(currentPage-2)
         nextPages.push(currentPage-1)
         nextPages.push(currentPage)
+    } else if(currentPage === pagesNumber) {
+        nextPages.push(currentPage-3)
+        nextPages.push(currentPage-2)
+        nextPages.push(currentPage-1)
     }
     else for(let i = currentPage; i < currentPage + 3 && i < pagesNumber; i++) nextPages.push(i)
 

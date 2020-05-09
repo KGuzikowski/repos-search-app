@@ -9,10 +9,13 @@ import TableSection from '../../components/TableSection/TableSection'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import Spinner from '../../components/Spinner/Spinner'
 import GreetUser from '../../components/GreetUser/GreetUser'
+import AcceptExtraPoints from '../../components/AcceptExtraPoints/AcceptExtraPoints'
+import Footer from '../../components/Footer/Footer'
 
 const MainPage = () => {
     const repos = useSelector((state: RootState) => state.repos)
     const user = useSelector((state: RootState) => state.user)
+    const extraPoints = useSelector((state: RootState) => state.extraPoints)
     let start = 0, end = 0, data
     let length = repos.repos === null ? 0 : repos.repos.length
     if(repos.repos !== null && repos.repos.length !== 0) {
@@ -47,6 +50,8 @@ const MainPage = () => {
                 }
 
             </Container>
+            <Footer />
+            { extraPoints.accepted ? null : <AcceptExtraPoints /> }
         </>
     )
 }

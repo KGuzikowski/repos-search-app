@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { repoType } from '../../../redux/repos/repo.types'
 import { sortReposAsc, sortReposDesc } from '../../../redux/repos/repo.actions'
-import { Text, Table, TableSectionContainer, Th, ThDiv, TableHeader, TableContainer } from './TableSection.styles'
+import { Text, Table, TableSectionContainer, Th, ThDiv, TableHeader, TableContainer, NoRepos } from './TableSection.styles'
 import Row from './Row'
 import { ArrowDown, ArrowUp, ArrowsDiv } from './Arrows'
 import PaginationChanger from '../Pagination/PaginationChanger'
@@ -20,7 +20,7 @@ type TableProps = {
 const TableSection = ({ user, repos, reposNum, start, end }: TableProps) => {
     const dispatch = useDispatch()
     if(repos === null || repos.length === 0)
-        return <Text> There are no repositories selected, use search bar above to find some. </Text>
+        return <NoRepos> There are no repositories selected, use search bar above to find some. </NoRepos>
 
     const handleArrowDownClick = (i: number) => {
         dispatch(sortReposAsc(i))

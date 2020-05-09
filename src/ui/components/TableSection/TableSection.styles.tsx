@@ -62,3 +62,10 @@ export const ThDiv = styled.div`
     justify-content: space-between;
     align-items: center;
 `
+
+export const NoRepos = styled(Text)`
+    @media only screen and (max-width: 700px) {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+`
