@@ -1,11 +1,11 @@
 This project was bootstrapped with Create React App.
 
 ## Used technologies:
-React, ReactDOM, React Router, TypeScript, styled-components, Redux among others.
+React, ReactDOM, React Router, TypeScript, styled-components and Redux among others.
 
 Tests are written using Jest and react test renderer.
 
-App uses Redux Persist for persisting last search query and results.
+App uses Redux Persist for persisting last search query and results, as well as user data.
 
 Redux Thunk is used for Redux async behaviour.
 
@@ -23,9 +23,9 @@ There is also other page. It uses **CallbackPage** component and it is used to i
 
 ## What about Redux?
 App has three reducers:
-* repos reducer - reducer used to manage repositories
-* user reducer - reducer used to manage user
-* third reducer - reducer used to manage a very small humoristic feature I did
+* repos reducer - reducer used to manage repositories.
+* user reducer - reducer used to manage user.
+* third reducer - reducer used to manage a very small humoristic feature I made.
 
 ## About given requirements
 * Pagination is implemented locally.
