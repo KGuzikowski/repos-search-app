@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Row component correctly 1`] = `
+<tr>
+  <td
+    className="sc-AxheI gsTZvP"
+  >
+    1
+  </td>
+  <td
+    className="sc-AxheI gsTZvP"
+  >
+    repo
+  </td>
+  <td
+    className="sc-AxheI gsTZvP"
+  >
+    Karol
+  </td>
+  <td
+    className="sc-AxheI gsTZvP"
+  >
+    2
+  </td>
+  <td
+    className="sc-AxheI gsTZvP"
+  >
+    2019-05-12
+  </td>
+</tr>
+`;

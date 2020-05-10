@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchBar component correctly 1`] = `
+<form
+  className="sc-AxirZ kHBfiv"
+  onSubmit={[Function]}
+>
+  <svg
+    className="sc-AxiKw kolHka"
+    fill="#ccc"
+  >
+    search.svg
+  </svg>
+  <input
+    className="sc-AxjAm gbUlxN"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="Repository name"
+    type="text"
+  />
+</form>
+`;

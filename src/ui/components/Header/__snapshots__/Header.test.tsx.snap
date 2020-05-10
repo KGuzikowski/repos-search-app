@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Header component correctly 1`] = `
+<header
+  className="sc-AxirZ eZIgto"
+>
+  <nav
+    className="sc-AxjAm beKDTQ"
+  >
+    <div
+      className="sc-AxiKw gyEHAk"
+    >
+      ForCallstack
+    </div>
+    <a
+      className="sc-AxhCb HHzFB"
+      href="https://github.com/login/oauth/authorize?scope=read:user&client_id=5065e74296f19a16677e"
+    >
+      Log in with GitHub
+    </a>
+  </nav>
+</header>
+`;

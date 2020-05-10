@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Spinner component correctly 1`] = `
+<img
+  className="sc-AxjAm BToDG"
+  src="spinner.svg"
+/>
+`;

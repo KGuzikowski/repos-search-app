@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PaginationChanger component correctly 1`] = `
+<div
+  className="sc-AxjAm dgNyNp"
+>
+  <p
+    className="sc-AxiKw jWIVuJ"
+  >
+    Items per page:
+  </p>
+  <select
+    className="sc-AxirZ kgnbOJ"
+    onChange={[Function]}
+  >
+    <option
+      value={5}
+    >
+      5
+    </option>
+    <option
+      value={10}
+    >
+      10
+    </option>
+    <option
+      value={15}
+    >
+      15
+    </option>
+    <option
+      value={20}
+    >
+      20
+    </option>
+  </select>
+</div>
+`;

@@ -1,0 +1,272 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TableSection component correctly 1`] = `
+<div
+  className="sc-AxirZ ffKkZf"
+>
+  <div
+    className="sc-AxhUy ewixqK"
+  >
+    <p
+      className="sc-AxjAm iRikXK"
+    >
+      Here are repositories you requested:
+    </p>
+    <div
+      className="sc-fznKkj grErZq"
+    >
+      <p
+        className="sc-fzokOt gcwYou"
+      >
+        Items per page:
+      </p>
+      <select
+        className="sc-fznZeY iGswVt"
+        onChange={[Function]}
+      >
+        <option
+          value={5}
+        >
+          5
+        </option>
+        <option
+          value={10}
+        >
+          10
+        </option>
+        <option
+          value={15}
+        >
+          15
+        </option>
+        <option
+          value={20}
+        >
+          20
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb cBiJgl"
+  >
+    <table
+      className="sc-AxiKw fQDhlB"
+    >
+      <thead>
+        <tr>
+          <th
+            className="sc-AxgMl cCpECe"
+          >
+            <div
+              className="sc-Axmtr cxWobE"
+            >
+              <p>
+                ID
+              </p>
+              <div
+                className="sc-fznyAO fjWxgF"
+              >
+                <svg
+                  className="sc-fzoLsD iVbjJU"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+                <svg
+                  className="sc-fzozJi kxdjke"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+              </div>
+            </div>
+          </th>
+          <th
+            className="sc-AxgMl cCpECe"
+          >
+            <div
+              className="sc-Axmtr cxWobE"
+            >
+              <p>
+                Repo Title
+              </p>
+              <div
+                className="sc-fznyAO fjWxgF"
+              >
+                <svg
+                  className="sc-fzoLsD iVbjJU"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+                <svg
+                  className="sc-fzozJi kxdjke"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+              </div>
+            </div>
+          </th>
+          <th
+            className="sc-AxgMl cCpECe"
+          >
+            <div
+              className="sc-Axmtr cxWobE"
+            >
+              <p>
+                Owner
+              </p>
+              <div
+                className="sc-fznyAO fjWxgF"
+              >
+                <svg
+                  className="sc-fzoLsD iVbjJU"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+                <svg
+                  className="sc-fzozJi kxdjke"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+              </div>
+            </div>
+          </th>
+          <th
+            className="sc-AxgMl cCpECe"
+          >
+            <div
+              className="sc-Axmtr cxWobE"
+            >
+              <p>
+                Stars
+              </p>
+              <div
+                className="sc-fznyAO fjWxgF"
+              >
+                <svg
+                  className="sc-fzoLsD iVbjJU"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+                <svg
+                  className="sc-fzozJi kxdjke"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+              </div>
+            </div>
+          </th>
+          <th
+            className="sc-AxgMl cCpECe"
+          >
+            <div
+              className="sc-Axmtr cxWobE"
+            >
+              <p>
+                Created at
+              </p>
+              <div
+                className="sc-fznyAO fjWxgF"
+              >
+                <svg
+                  className="sc-fzoLsD iVbjJU"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+                <svg
+                  className="sc-fzozJi kxdjke"
+                  onClick={[Function]}
+                >
+                  arrow_down.svg
+                </svg>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            className="sc-AxheI gNnDlL"
+          >
+            1
+          </td>
+          <td
+            className="sc-AxheI gNnDlL"
+          >
+            repo
+          </td>
+          <td
+            className="sc-AxheI gNnDlL"
+          >
+            Karol
+          </td>
+          <td
+            className="sc-AxheI gNnDlL"
+          >
+            2
+          </td>
+          <td
+            className="sc-AxheI gNnDlL"
+          >
+            2019-05-12
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    className="sc-fzqBZW ewoBuA"
+  >
+    <div>
+      2
+      -
+      1
+       of 
+      1
+       repos
+    </div>
+    <div
+      className="sc-fzoXzr iBuFyX"
+    >
+      <svg
+        className="sc-fzplWN isUuJy"
+        onClick={[Function]}
+      >
+        arrow_down.svg
+      </svg>
+      <p
+        className="sc-fzqNJr ixBbhF"
+        onClick={[Function]}
+      >
+        1
+      </p>
+      <p
+        className="sc-fzoLag cAtFyR"
+      >
+        of
+      </p>
+      <p
+        className="sc-fzqNJr ixBbhF"
+        onClick={[Function]}
+      >
+        NaN
+      </p>
+      <svg
+        className="sc-fzpans jfCHoO"
+        onClick={[Function]}
+      >
+        arrow_down.svg
+      </svg>
+    </div>
+  </div>
+</div>
+`;

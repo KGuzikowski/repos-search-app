@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PageChanger component correctly 1`] = `
+<div
+  className="sc-AxhCb eqnjqy"
+>
+  <div>
+    2
+    -
+    1
+     of 
+    1
+     repos
+  </div>
+  <div
+    className="sc-Axmtr gxCDUi"
+  >
+    <svg
+      className="sc-fzpans hKpuCT"
+      onClick={[Function]}
+    >
+      arrow_down.svg
+    </svg>
+    <p
+      className="sc-AxhUy goOHvP"
+      onClick={[Function]}
+    >
+      1
+    </p>
+    <p
+      className="sc-AxheI jzDweV"
+    >
+      of
+    </p>
+    <p
+      className="sc-AxhUy goOHvP"
+      onClick={[Function]}
+    >
+      NaN
+    </p>
+    <svg
+      className="sc-fzoLsD dnFGMq"
+      onClick={[Function]}
+    >
+      arrow_down.svg
+    </svg>
+  </div>
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders GreetUser component correctly 1`] = `
+<div
+  className="sc-AxjAm jQNnlu"
+>
+  <p
+    className="sc-AxirZ isHfjn"
+  >
+    Hi 
+    Karol
+    !
+  </p>
+  <p
+    className="sc-AxiKw fimrdQ"
+  >
+    (Your repositories will be highlighted)
+  </p>
+</div>
+`;
