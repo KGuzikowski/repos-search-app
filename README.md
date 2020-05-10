@@ -1,3 +1,5 @@
+# Project made by *Karol Guzikowski* for recruitment purposes.
+
 This project was bootstrapped with Create React App.
 
 ## Used technologies:
