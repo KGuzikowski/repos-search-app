@@ -40,5 +40,10 @@ App has three reducers:
 * Last search query and results are persisted.
 * User can log in with GitHub.
 
+## About workflow
+During development of this app I only worked on master branch because I felt that since I work alone and on such simple project there's no need to use multiple branches and kind of waste time. But when working with other programmers I always use branching and more frequently commit changes. I must say that when developing this app I was actually forgetting to commit my changes more often.
+
 ## Final thoughts
 App might not be the most beautifull in the world but I think it looks pretty good. It's responsive and it has nice color theme.
+
+Since it's private repository and this app will not go to production, I uploaded *.env* file to GitHub.
