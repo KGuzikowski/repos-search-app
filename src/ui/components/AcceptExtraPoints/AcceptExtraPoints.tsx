@@ -4,12 +4,15 @@ import { acceptExtraPoints } from '../../../redux/extraPoints/extraPoints.action
 import { AcceptPoints, AcceptPointsMessage } from './AcceptExtraPoints.styles'
 import Button from '../Button/Button'
 
+// this component used to have a different meaning but basically it could be further developed
+// to become a cookies bar so I treat that like it now.
+
 const AcceptExtraPoints = () => {
     const dispatch = useDispatch()
     return (
         <AcceptPoints>
             <AcceptPointsMessage>
-                It's not cookies. Accept to add extra points!
+                Accept cookies!
             </AcceptPointsMessage>
             <Button reversed onClick={() => dispatch(acceptExtraPoints())}>Accept</Button>
         </AcceptPoints>

@@ -8,7 +8,7 @@ const LogoDiv = styled.div`
 
 const Logo = () => (
     <LogoDiv>
-        ForCallstack
+        ReposSearch
     </LogoDiv>
 )
 

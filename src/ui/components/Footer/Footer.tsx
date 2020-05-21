@@ -24,7 +24,7 @@ const Name = styled.span`
 const Footer = () => {
     return (
         <FooterDiv>
-            For Callstack team! App made for recruitment purposes by <Name>Karol Guzikowski</Name>.
+            Let's search for repositories! App made for recruitment purposes by <Name>Karol Guzikowski</Name>.
         </FooterDiv>
     )
 }
