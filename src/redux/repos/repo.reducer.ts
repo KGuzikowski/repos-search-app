@@ -51,10 +51,14 @@ const reposReducer = (state = INITIAL_STATE, action: any): reposStateType => {
                 pagination: action.payload
             }
         case reposActionTypes.SET_PAGE:
-            return {
-                ...state,
-                page: action.payload
-            }
+            let newState
+            if(state.page !== action.payload && [1,2,3,4,5].includes(action.payload)) {
+                newState = {
+                    ...state,
+                    page: action.payload
+                }
+            } else newState = state
+            return newState
         default: return state
     }
 }
