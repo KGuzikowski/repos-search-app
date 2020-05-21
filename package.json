@@ -1,5 +1,6 @@
 {
-  "name": "callstack-project",
+  "name": "repos-search-app",
+  "author": "Karol Guzikowski",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
