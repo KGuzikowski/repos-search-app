@@ -27,23 +27,17 @@ There is also other page. It uses **CallbackPage** component and it is used to i
 App has three reducers:
 * repos reducer - reducer used to manage repositories.
 * user reducer - reducer used to manage user.
-* third reducer - reducer used to manage a very small humoristic feature I made.
+* third reducer - used for cookies
 
 ## About given requirements
 * Pagination is implemented locally.
 * User can change how many items per page are visible.
-* Table is rendered as requested.
-* User can sort table as requested
+* User can sort table
 * When user is logged in, their repos are highlighted.
 * Results are being cached in local storage.
 * Debounce is used for fetching repos when user is typyng.
 * Last search query and results are persisted.
 * User can log in with GitHub.
 
-## About workflow
-During development of this app I only worked on master branch because I felt that since I work alone and on such simple project there's no need to use multiple branches and kind of waste time. But when working with other programmers I always use branching and more frequently commit changes. I must say that when developing this app I was actually forgetting to commit my changes more often.
-
 ## Final thoughts
 App might not be the most beautifull in the world but I think it looks pretty good. It's responsive and it has nice color theme.
-
-Since it's private repository and this app will not go to production, I uploaded *.env* file to GitHub.
