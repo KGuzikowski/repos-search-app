@@ -14,7 +14,8 @@ const Header = () => {
         e.preventDefault();
         dispatch(logout())
     }
-
+    console.log(process.env.REACT_APP_CLIENT_ID)
+    console.log(process.env.REACT_APP_CLIENT_SECRET)
     const href = `https://github.com/login/oauth/authorize?scope=read:user&client_id=${process.env.REACT_APP_CLIENT_ID}`
     return (
         <HeaderTag>
